@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/bottom_navigation_background_curved.xml" value="0.218" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/bottom_navigation_home.xml" value="0.1" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/bottom_navigation_selected_background.xml" value="0.218" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/bottom_navigation_selected_background_icon.xml" value="0.218" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/bottom_navigation_selected_background_style.xml" value="0.1" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/bottom_navigation_selected_home.xml" value="0.218" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/bottom_navigation_trip_calendar_svg.xml" value="0.1" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/flights_icon_change_selector.xml" value="0.218" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/guide_icon_change_selector.xml" value="0.218" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/home_icon_change_selector.xml" value="0.1" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/home_tablayout_selectedcolor.xml" value="0.1" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/search_icon_change_selector.xml" value="0.218" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/transparent_selection_background.xml" value="0.1" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/trip_and_bookmark_icon_change_selector.xml" value="0.218" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/bottom.xml" value="0.3482789855072464" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/fragment_detail.xml" value="0.3482789855072464" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/fragment_guide.xml" value="0.3482789855072464" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/fragment_home.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/fragment_search.xml" value="0.3482789855072464" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/fragment_search_result.xml" value="0.3482789855072464" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/fragment_trip_and_bookmark.xml" value="0.3482789855072464" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/home_screen_deals_item.xml" value="0.1" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/nearby_attraction_item.xml" value="0.22" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/top_destinations_item.xml" value="0.3482789855072464" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

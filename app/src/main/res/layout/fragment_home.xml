@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="adapter"
+            type="com.example.mehmet_sevim_bitirme_projesi.adapters.HomeScreenTravelListAdapter" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E5E5E5"
+        tools:context=".presentation.home.HomeFragment">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/_317sdp"
+            android:layout_height="@dimen/_340sdp"
+            android:outlineSpotShadowColor="@color/black"
+            android:scaleType="fitXY"
+            android:src="@drawable/home_screen_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_173sdp"
+            android:fontFamily="@font/source_sans_pro"
+            android:text="Where's your\nnext destination?"
+            android:textColor="#FCFCFD"
+            android:textSize="@dimen/_25ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/text"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:text="DEALS"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="6dp"
+            android:background="#E5E5E5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:tabTextColor="#FF4760"
+            app:tabGravity="start"
+            app:tabMode="fixed">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="all"
+                android:textSize="@dimen/_2sdp"
+
+
+                />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Flights"
+                android:textSize="@dimen/_2sdp"
+
+                />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hotels"
+                android:textSize="@dimen/_2sdp"
+
+                />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transportations"
+                android:textSize="@dimen/_2sdp" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcyc"
+            android:layout_width="wrap_content"
+            android:layout_height="166dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="80dp"
+            android:adapter="@{adapter}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

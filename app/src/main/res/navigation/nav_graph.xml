@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.mehmet_sevim_bitirme_projesi.presentation.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.mehmet_sevim_bitirme_projesi.presentation.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_searchResultFragment"
+            app:destination="@id/searchResultFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_tripAndBookmarkFragment"
+            app:destination="@id/tripAndBookmarkFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tripAndBookmarkFragment"
+        android:name="com.example.mehmet_sevim_bitirme_projesi.presentation.tripandbookmark.TripAndBookmarkFragment"
+        android:label="fragment_trip_and_bookmark"
+        tools:layout="@layout/fragment_trip_and_bookmark" >
+        <action
+            android:id="@+id/action_tripAndBookmarkFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_tripAndBookmarkFragment_to_guideFragment"
+            app:destination="@id/guideFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/guideFragment"
+        android:name="com.example.mehmet_sevim_bitirme_projesi.presentation.guide.GuideFragment"
+        android:label="fragment_guide"
+        tools:layout="@layout/fragment_guide" >
+        <action
+            android:id="@+id/action_guideFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_guideFragment_to_searchResultFragment"
+            app:destination="@id/searchResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.mehmet_sevim_bitirme_projesi.presentation.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="com.example.mehmet_sevim_bitirme_projesi.presentation.searchresult.SearchResultFragment"
+        android:label="fragment_search_result"
+        tools:layout="@layout/fragment_search_result" />
+</navigation>
