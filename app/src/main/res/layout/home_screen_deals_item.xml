@@ -11,25 +11,21 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="@dimen/_200sdp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="8dp"
-            android:layout_margin="5dp"
-            android:elevation="10dp"
-            tools:ignore="MissingConstraints">
 
-        <ImageView
+
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageView2"
             android:layout_width="@dimen/_190sdp"
             android:layout_height="@dimen/_100sdp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/RoundedSquareDestinations"
             app:srcCompat="@drawable/bottom_navigation_selected_home" />
-        </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

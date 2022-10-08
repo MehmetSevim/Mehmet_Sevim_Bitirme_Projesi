@@ -19,7 +19,7 @@
             android:layout_width="@dimen/_110sdp"
             android:layout_height="@dimen/_170sdp"
             android:layout_marginStart="@dimen/_10sdp"
-            android:scaleType="centerCrop"
+            android:scaleType="fitXY"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/RoundedSquareDestinations"

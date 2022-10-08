@@ -15,6 +15,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.navigation.fragment.findNavController
 import com.example.mehmet_sevim_bitirme_projesi.BR
 import com.example.mehmet_sevim_bitirme_projesi.adapters.HomeScreenTravelListAdapter
 import com.example.mehmet_sevim_bitirme_projesi.databinding.FragmentHomeBinding
@@ -114,10 +115,18 @@ class HomeFragment : Fragment() {
             )
             rcyc.layoutManager = layoutManager
             homeScreenTravelListAdapter =HomeScreenTravelListAdapter(list){
+               setDetailScreen(it.id.toString())
 
             }
             setVariable(BR.adapter,homeScreenTravelListAdapter)
             homeScreenTravelListAdapter.notifyDataSetChanged()
         }
+    }
+    private fun setDetailScreen(id:String)
+    {
+     val action =
+         HomeFragmentDirections.actionHomeFragmentToDetailActivity(id = id)
+        findNavController().navigate(action)
+
     }
 }

@@ -8,6 +8,10 @@
             name="adapterMight"
             type="com.example.mehmet_sevim_bitirme_projesi.adapters.might.GuideScreenMightAdapter" />
 
+        <variable
+            name="adaptertoppic"
+            type="com.example.mehmet_sevim_bitirme_projesi.adapters.topPick.GuideScreenTopPicAdapter" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -48,7 +52,7 @@
             android:layout_marginTop="@dimen/_20sdp"
             android:background="@drawable/search_border"
             android:drawableRight="@drawable/ic_search_svg_red"
-            android:hint="Where next?"
+            android:hint="  A country, a city, a place... or anything"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.529"
             app:layout_constraintStart_toStartOf="parent"
@@ -99,9 +103,11 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/topPicRecycler"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_220sdp"
             android:layout_marginTop="@dimen/_11sdp"
+            android:adapter="@{adaptertoppic}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView19" />

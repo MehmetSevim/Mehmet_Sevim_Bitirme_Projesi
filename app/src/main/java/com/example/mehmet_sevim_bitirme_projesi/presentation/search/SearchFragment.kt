@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.mehmet_sevim_bitirme_projesi.BR
 import com.example.mehmet_sevim_bitirme_projesi.R
@@ -16,6 +17,8 @@ import com.example.mehmet_sevim_bitirme_projesi.adapters.destinations.SearchScre
 import com.example.mehmet_sevim_bitirme_projesi.adapters.nearby.SearchScreenNearbyAdapter
 import com.example.mehmet_sevim_bitirme_projesi.databinding.FragmentSearchBinding
 import com.example.mehmet_sevim_bitirme_projesi.domain.model.home.HomeScreenTravelListItem
+import com.example.mehmet_sevim_bitirme_projesi.presentation.guide.GuideListModel
+import com.example.mehmet_sevim_bitirme_projesi.presentation.home.HomeFragmentDirections
 import com.example.mehmet_sevim_bitirme_projesi.presentation.home.HomeTravelListModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
@@ -26,7 +29,8 @@ import java.security.Provider
 @AndroidEntryPoint
 class SearchFragment : Fragment() {
     private lateinit var fragmentSearchBinding: FragmentSearchBinding
-    private lateinit var searchListModel : SearchListModel
+    private val searchListModel by viewModels<SearchListModel>()
+    private lateinit var allTravelList:List<HomeScreenTravelListItem>
 
     override fun onCreateView(
 
@@ -40,7 +44,9 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        searchListModel = ViewModelProvider(this).get(SearchListModel::class.java)
+        getAllDestination()
+        getAllNearby()
+
 
 
     }
@@ -48,16 +54,19 @@ class SearchFragment : Fragment() {
 
 
     private fun getAllDestination(){
-        searchListModel.getAllDestinations().observe(viewLifecycleOwner){
-              setRecyclerAdapterDestination(it)
+
+        searchListModel.getAllTravelList().observe(viewLifecycleOwner){
+            allTravelList=it.filter{ m -> m.category=="topdestination"}
+              setRecyclerAdapterDestination(allTravelList)
         }
 
 
     }
 
     private fun getAllNearby(){
-        searchListModel.getAllNearby().observe(viewLifecycleOwner){
-            setRecyclerAdapterNearby(it)
+        searchListModel.getAllTravelList().observe(viewLifecycleOwner){
+            allTravelList=it.filter{ m -> m.category=="mightneed"}
+            setRecyclerAdapterNearby(allTravelList)
         }
 
 
@@ -75,7 +84,7 @@ class SearchFragment : Fragment() {
             )
             destinationsRecyclerView.layoutManager = layoutManager
             val searchScreenDestinationsAdapter = SearchScreenDestinationsAdapter(list){
-
+                setDetailScreen(it.id)
             }
 
             setVariable(BR.adapterDestinations,searchScreenDestinationsAdapter)
@@ -95,12 +104,20 @@ class SearchFragment : Fragment() {
             )
             nearbyRecyclerView.layoutManager = layoutManager
             val searchScreenNearbyAdapter = SearchScreenNearbyAdapter(list){
+                setDetailScreen(it.id)
 
             }
             setVariable(BR.adapterNearby,searchScreenNearbyAdapter)
             searchScreenNearbyAdapter.notifyDataSetChanged()
 
         }
+    }
+    private fun setDetailScreen(id:String)
+    {
+        val action =
+            SearchFragmentDirections.actionSearchFragmentToDetailActivity(id = id)
+        findNavController().navigate(action)
+
     }
 
 }

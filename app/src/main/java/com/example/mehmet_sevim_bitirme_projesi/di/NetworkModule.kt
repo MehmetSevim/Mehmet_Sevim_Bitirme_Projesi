@@ -1,14 +1,8 @@
 package com.example.mehmet_sevim_bitirme_projesi.di
 
 import com.example.mehmet_sevim_bitirme_projesi.data.remote.ApiService
-import com.example.mehmet_sevim_bitirme_projesi.data.remote.repository.GuideRepositoryImp
-import com.example.mehmet_sevim_bitirme_projesi.data.remote.repository.HomeTravelListRepositoryImp
-import com.example.mehmet_sevim_bitirme_projesi.data.remote.repository.SearchRepositoryImp
-import com.example.mehmet_sevim_bitirme_projesi.data.remote.repository.TripBookMarkRepositoryImp
-import com.example.mehmet_sevim_bitirme_projesi.domain.repository.GuideRepository
-import com.example.mehmet_sevim_bitirme_projesi.domain.repository.HomeTravelListRepository
-import com.example.mehmet_sevim_bitirme_projesi.domain.repository.SearchReposiyory
-import com.example.mehmet_sevim_bitirme_projesi.domain.repository.TripBookMarkRepository
+import com.example.mehmet_sevim_bitirme_projesi.data.remote.repository.*
+import com.example.mehmet_sevim_bitirme_projesi.domain.repository.*
 import com.example.mehmet_sevim_bitirme_projesi.utils.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -64,5 +58,12 @@ class NetworkModule {
     fun provideTripBookmarkRepository(apiService: ApiService): TripBookMarkRepository {
         return TripBookMarkRepositoryImp(apiService)
     }
+
+    @Provides
+    @Singleton
+    fun provideDetailRepository(apiService: ApiService): DetailRepository {
+        return DetailRepositoryImp(apiService)
+    }
+
 
 }

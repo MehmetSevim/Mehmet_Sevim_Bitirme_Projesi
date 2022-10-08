@@ -1,5 +1,6 @@
 package com.example.mehmet_sevim_bitirme_projesi.domain.usecase
 
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.mehmet_sevim_bitirme_projesi.domain.model.home.HomeScreenTravelListItem
@@ -18,6 +19,8 @@ class GuideUseCase @Inject constructor (private val guideRepository: GuideReposi
             Callback<List<HomeScreenTravelListItem>> {
             override fun onResponse(call : Call<List<HomeScreenTravelListItem>>, response: Response<List<HomeScreenTravelListItem>>){
                 _travelList.value=response.body()
+
+
             }
 
 

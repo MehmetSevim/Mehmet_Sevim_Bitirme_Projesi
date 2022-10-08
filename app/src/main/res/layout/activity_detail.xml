@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="adapterDetailImage"
+            type="com.example.mehmet_sevim_bitirme_projesi.adapters.detail.DetailScreenImageAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,10 +42,12 @@
             app:srcCompat="@drawable/ic_launcher_background" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/detailImageRcycler"
             android:layout_width="@dimen/_275sdp"
             android:layout_height="@dimen/_54sdp"
-            android:layout_marginTop="@dimen/_285sdp"
+            android:layout_marginTop="@dimen/_270sdp"
             app:layout_constraintEnd_toEndOf="parent"
+            android:adapter="@{adapterDetailImage}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

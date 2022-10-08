@@ -9,31 +9,15 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class SearchListModel @Inject constructor(private val homeTravelListUseCase:  HomeTravelListUseCase
+class SearchListModel @Inject constructor(private val searchListUseCase: SearchUseCase
 ): ViewModel()  {
 
 
-    init {
-        getAllTravelList()
-    }
-
     fun getAllTravelList(): LiveData<List<HomeScreenTravelListItem>> {
-        with(homeTravelListUseCase){
+        with(searchListUseCase){
             getAllTravelList()
             return travelList
         }
     }
-    fun getAllDestinations(): LiveData<List<HomeScreenTravelListItem>> {
-        with(homeTravelListUseCase){
-            getAllDestinations()
-            return destinations
-        }
-    }
 
-    fun getAllNearby(): LiveData<List<HomeScreenTravelListItem>> {
-        with(homeTravelListUseCase){
-            getAllNearby()
-            return nearby
-        }
-    }
 }

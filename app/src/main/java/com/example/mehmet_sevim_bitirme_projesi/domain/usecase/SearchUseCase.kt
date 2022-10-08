@@ -33,11 +33,5 @@ class SearchUseCase @Inject constructor(private val searchReposiyory: SearchRepo
         })
     }
 
-    fun getAllDestinations(){
-        _destinations.value=_travelList.value?.filter { m -> m.category == "topdestination" }
-    }
 
-     fun getAllNearby(){
-        _nearby.value=_travelList.value?.filter { m -> m.category == "nearby" }
-    }
 }

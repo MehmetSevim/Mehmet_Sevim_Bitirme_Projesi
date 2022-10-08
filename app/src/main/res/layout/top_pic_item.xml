@@ -4,31 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="homescreenTravelListItem"
+            type="com.example.mehmet_sevim_bitirme_projesi.domain.model.home.HomeScreenTravelListItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="@dimen/_214sdp"
+        android:layout_height="@dimen/_221sdp">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="@dimen/_204sdp"
-            android:layout_height="@dimen/_221sdp"
-            app:cardCornerRadius="8dp"
-            android:layout_margin="5dp"
-            android:elevation="10dp"
-            tools:ignore="MissingConstraints">
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_130sdp"
-                android:scaleType="centerCrop"
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="@dimen/_205sdp"
+            android:layout_height="@dimen/_130sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/home_screen_image" />
+
+        <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="@dimen/_26sdp"
+                android:layout_height="@dimen/_26sdp"
+                android:layout_marginTop="@dimen/_13sdp"
+                android:layout_marginEnd="@dimen/_13sdp"
+                android:background="@drawable/bookmark_background"
+                android:src="@drawable/bookmark_add_icon_svg"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/bottom_navigation_selected_home" />
-        </androidx.cardview.widget.CardView>
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="238dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/source_sans_pro"
+            android:text="@{homescreenTravelListItem.title}"
+            android:textColor="#0048F0"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="237dp"
+            android:layout_height="79dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/source_sans_pro"
+            android:text="@{homescreenTravelListItem.description}"
+            android:textColor="#181A25"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintStart_toStartOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

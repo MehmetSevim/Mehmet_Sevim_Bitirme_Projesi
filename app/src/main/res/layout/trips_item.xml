@@ -9,7 +9,7 @@
         android:id="@+id/imageView4"
         android:layout_width="@dimen/_289sdp"
         android:layout_height="@dimen/_162sdp"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/RoundedSquareDestinations"

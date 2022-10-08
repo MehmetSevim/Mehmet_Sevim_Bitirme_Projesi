@@ -13,6 +13,12 @@
         <action
             android:id="@+id/action_homeFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailActivity"
+            app:destination="@id/detailActivity" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -28,6 +34,9 @@
         <action
             android:id="@+id/action_searchFragment_to_tripAndBookmarkFragment"
             app:destination="@id/tripAndBookmarkFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_detailActivity"
+            app:destination="@id/detailActivity" />
     </fragment>
     <fragment
         android:id="@+id/tripAndBookmarkFragment"
@@ -40,6 +49,9 @@
         <action
             android:id="@+id/action_tripAndBookmarkFragment_to_guideFragment"
             app:destination="@id/guideFragment" />
+        <action
+            android:id="@+id/action_tripAndBookmarkFragment_to_detailActivity"
+            app:destination="@id/detailActivity" />
     </fragment>
     <fragment
         android:id="@+id/guideFragment"
@@ -52,15 +64,30 @@
         <action
             android:id="@+id/action_guideFragment_to_searchResultFragment"
             app:destination="@id/searchResultFragment" />
+        <action
+            android:id="@+id/action_guideFragment_to_detailActivity"
+            app:destination="@id/detailActivity" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.mehmet_sevim_bitirme_projesi.presentation.detail.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/searchResultFragment"
         android:name="com.example.mehmet_sevim_bitirme_projesi.presentation.searchresult.SearchResultFragment"
         android:label="fragment_search_result"
         tools:layout="@layout/fragment_search_result" />
+    <activity
+        android:id="@+id/detailActivity"
+        android:name="com.example.mehmet_sevim_bitirme_projesi.presentation.detail.DetailActivity"
+        android:label="DetailActivity" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </activity>
 </navigation>

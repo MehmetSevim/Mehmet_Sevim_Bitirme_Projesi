@@ -58,9 +58,11 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="6dp"
             android:background="#E5E5E5"
+            app:tabTextAppearance="@style/tabStyles"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:tabTextColor="#FF4760"
+            app:tabSelectedTextColor="#FF4760"
+            app:tabIndicatorColor="#FF4760"
             app:tabGravity="start"
             app:tabMode="fixed">
 
@@ -68,10 +70,8 @@
                 android:id="@+id/all"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="all"
+                android:text="All"
                 android:textSize="@dimen/_2sdp"
-
-
                 />
 
             <com.google.android.material.tabs.TabItem
@@ -89,9 +89,7 @@
                 android:layout_height="wrap_content"
                 android:text="Hotels"
                 android:textSize="@dimen/_2sdp"
-
                 />
-
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/transportation"
                 android:layout_width="wrap_content"
@@ -103,16 +101,14 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcyc"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="166dp"
-            android:layout_marginStart="20dp"
             android:layout_marginBottom="80dp"
             android:adapter="@{adapter}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
             app:layout_constraintVertical_bias="1.0" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

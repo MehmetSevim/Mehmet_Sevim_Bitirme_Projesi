@@ -3,8 +3,8 @@
     <style name="ImageView.Corner" parent="">
         <item name="cornerSizeTopRight">0dp</item>
         <item name="cornerSizeTopLeft">0dp</item>
-        <item name="cornerSizeBottomLeft">@dimen/_50sdp</item>
-        <item name="cornerSizeBottomRight">@dimen/_50sdp</item>
+        <item name="cornerSizeBottomLeft">@dimen/_30sdp</item>
+        <item name="cornerSizeBottomRight">@dimen/_30sdp</item>
         <item name="cornerFamily">rounded</item>
     </style>
 </resources>
