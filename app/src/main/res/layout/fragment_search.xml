@@ -4,6 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="adapterDestinations"
+            type="com.example.mehmet_sevim_bitirme_projesi.adapters.destinations.SearchScreenDestinationsAdapter" />
+        <variable
+            name="adapterNearby"
+            type="com.example.mehmet_sevim_bitirme_projesi.adapters.nearby.SearchScreenNearbyAdapter" />
 
     </data>
 
@@ -22,7 +28,6 @@
             android:layout_marginTop="59dp"
             android:fontFamily="@font/source_sans_pro"
             android:text="Search"
-
             android:textSize="@dimen/_25ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -31,8 +36,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditText"
             android:layout_width="@dimen/_290sdp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_39sdp"
             android:layout_marginTop="20dp"
+            android:background="@drawable/search_border"
             android:drawableRight="@drawable/ic_search_svg_red"
             android:hint="Where next?"
             app:layout_constraintEnd_toEndOf="parent"
@@ -51,10 +57,11 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_120sdp"
+            android:id="@+id/destinations_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:adapter="@{adapterDestinations}"
             app:layout_constraintStart_toStartOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -66,13 +73,15 @@
             android:fontFamily="@font/source_sans_pro"
             android:text="NEARBY ATTRACTIONS"
             android:textSize="@dimen/_15ssp"
-            app:layout_constraintStart_toStartOf="@+id/recyclerView"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+            app:layout_constraintStart_toStartOf="@+id/destinations_recyclerView"
+            app:layout_constraintTop_toBottomOf="@+id/destinations_recyclerView" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="@dimen/_290sdp"
-            android:layout_height="301dp"
+            android:id="@+id/nearbyRecyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:adapter="@{adapterNearby}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

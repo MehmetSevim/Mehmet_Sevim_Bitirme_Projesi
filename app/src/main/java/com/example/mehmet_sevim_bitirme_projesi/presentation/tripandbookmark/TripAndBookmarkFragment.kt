@@ -5,11 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.example.mehmet_sevim_bitirme_projesi.R
+import com.example.mehmet_sevim_bitirme_projesi.databinding.FragmentSearchBinding
+import com.example.mehmet_sevim_bitirme_projesi.domain.model.home.HomeScreenTravelListItem
+import com.example.mehmet_sevim_bitirme_projesi.presentation.search.SearchListModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class TripAndBookmarkFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+
+    private val tripBookMarkList by viewModels<TripBookMarkList>()
+    private lateinit var allTravelList:List<HomeScreenTravelListItem>
 
 
     override fun onCreateView(
@@ -18,6 +25,18 @@ class TripAndBookmarkFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_trip_and_bookmark, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        getAllBookMark()
+    }
+
+    private fun getAllBookMark(){
+        tripBookMarkList.getAllTravel().observe(viewLifecycleOwner){
+            allTravelList=it.filter{ m -> m.isBookmark==true}
+
+        }
     }
 
 

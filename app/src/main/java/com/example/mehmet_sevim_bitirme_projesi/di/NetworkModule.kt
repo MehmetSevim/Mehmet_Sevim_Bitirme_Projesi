@@ -1,8 +1,14 @@
 package com.example.mehmet_sevim_bitirme_projesi.di
 
 import com.example.mehmet_sevim_bitirme_projesi.data.remote.ApiService
+import com.example.mehmet_sevim_bitirme_projesi.data.remote.repository.GuideRepositoryImp
 import com.example.mehmet_sevim_bitirme_projesi.data.remote.repository.HomeTravelListRepositoryImp
+import com.example.mehmet_sevim_bitirme_projesi.data.remote.repository.SearchRepositoryImp
+import com.example.mehmet_sevim_bitirme_projesi.data.remote.repository.TripBookMarkRepositoryImp
+import com.example.mehmet_sevim_bitirme_projesi.domain.repository.GuideRepository
 import com.example.mehmet_sevim_bitirme_projesi.domain.repository.HomeTravelListRepository
+import com.example.mehmet_sevim_bitirme_projesi.domain.repository.SearchReposiyory
+import com.example.mehmet_sevim_bitirme_projesi.domain.repository.TripBookMarkRepository
 import com.example.mehmet_sevim_bitirme_projesi.utils.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -39,6 +45,24 @@ class NetworkModule {
     @Singleton
     fun provideHomeTravelListRepository(apiService: ApiService):HomeTravelListRepository{
        return HomeTravelListRepositoryImp(apiService)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGuideRepository(apiService: ApiService): GuideRepository {
+        return GuideRepositoryImp(apiService)
+    }
+
+    @Provides
+    @Singleton
+    fun provideSearchRepository(apiService: ApiService): SearchReposiyory {
+        return SearchRepositoryImp(apiService)
+    }
+
+    @Provides
+    @Singleton
+    fun provideTripBookmarkRepository(apiService: ApiService): TripBookMarkRepository {
+        return TripBookMarkRepositoryImp(apiService)
     }
 
 }
