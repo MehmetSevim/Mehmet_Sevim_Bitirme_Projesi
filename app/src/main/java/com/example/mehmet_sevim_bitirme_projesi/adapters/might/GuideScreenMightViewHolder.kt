@@ -26,8 +26,6 @@ class GuideScreenMightViewHolder(var travelBinding: ViewDataBinding) :
     fun setImageFromApi(imgSourceUrl: String, imageView: ShapeableImageView) {
         Picasso.get()
             .load(imgSourceUrl)
-            .resize(100, 100)
-            .centerCrop()
             .into(imageView);
     }
 

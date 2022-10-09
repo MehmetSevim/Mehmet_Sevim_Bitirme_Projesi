@@ -19,9 +19,10 @@
             android:layout_width="@dimen/_110sdp"
             android:layout_height="@dimen/_170sdp"
             android:layout_marginStart="@dimen/_10sdp"
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/item_backgound_blacked"
             app:shapeAppearanceOverlay="@style/RoundedSquareDestinations"
             app:srcCompat="@drawable/home_screen_image" />
 
@@ -44,10 +45,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="@{homescreenTravelListItem.city}"
-            android:textColor="#80FCFCFD"
+            android:textColor="#FCFCFD"
             android:textSize="@dimen/_11ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/searchDestinationsImageView"
             app:layout_constraintTop_toBottomOf="@+id/search_destinations_title_textView" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

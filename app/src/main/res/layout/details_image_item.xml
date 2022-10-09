@@ -5,7 +5,7 @@
     <data>
         <variable
             name="homescreenTravelListItem"
-            type="com.example.mehmet_sevim_bitirme_projesi.domain.model.home.HomeScreenTravelListItem" />
+            type="com.example.mehmet_sevim_bitirme_projesi.domain.model.home.Image" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,14 +13,15 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/searchDestinationsImageView"
+            android:id="@+id/detailsImageView"
             android:layout_width="@dimen/_39sdp"
             android:layout_height="@dimen/_39sdp"
-            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_7sdp"
             android:scaleType="fitXY"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/RoundedSquareDestinations"
+            app:shapeAppearanceOverlay="@style/RoundedSquareForDetails"
             app:srcCompat="@drawable/home_screen_image" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

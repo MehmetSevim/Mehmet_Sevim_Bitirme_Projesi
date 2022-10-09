@@ -24,11 +24,6 @@ class HomeTravelListUseCase @Inject constructor(private val  homeTravelListRepos
     private val _transportationList = MutableLiveData<List<HomeScreenTravelListItem>>()
     val transportationList : LiveData<List<HomeScreenTravelListItem>> = _transportationList
 
-    private val _destinations = MutableLiveData<List<HomeScreenTravelListItem>>()
-    val destinations : LiveData<List<HomeScreenTravelListItem>> = _destinations
-
-    private var _nearby = MutableLiveData<List<HomeScreenTravelListItem>>()
-    val nearby : LiveData<List<HomeScreenTravelListItem>> = _nearby
 
 
     fun getAllTravelList(){
@@ -55,13 +50,7 @@ class HomeTravelListUseCase @Inject constructor(private val  homeTravelListRepos
          _transportationList.value=_travelList.value?.filter { m -> m.category=="transportation"}
 
     }
-    fun getAllDestinations(){
-        _destinations.value=_travelList.value?.filter { m -> m.category == "topdestination" }
-    }
 
-    fun getAllNearby(){
-        _nearby.value=_travelList.value?.filter { m -> m.category == "nearby" }
-    }
 
 
 

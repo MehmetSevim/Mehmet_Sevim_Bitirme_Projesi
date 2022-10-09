@@ -43,15 +43,15 @@
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{homescreenTravelListItem.title}"
-            android:textColor="#70FCFCFD"
+            android:text="@{homescreenTravelListItem.city}"
+            android:textColor="#FCFCFD"
             android:textSize="@dimen/_14ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/bookMarkCheckımageButton"
             android:layout_width="@dimen/_26sdp"
             android:layout_height="@dimen/_26sdp"
             android:layout_marginTop="@dimen/_10sdp"

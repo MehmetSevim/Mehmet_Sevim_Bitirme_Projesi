@@ -27,8 +27,6 @@ class GuideScreenTopPicViewHolder (var travelBinding: ViewDataBinding) :
     fun setImageFromApi(imgSourceUrl: String, imageView: ImageView) {
         Picasso.get()
             .load(imgSourceUrl)
-            .resize(100, 100)
-            .centerCrop()
             .into(imageView);
     }
 

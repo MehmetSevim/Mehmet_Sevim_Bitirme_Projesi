@@ -31,7 +31,7 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/DetailScreenPlanetsImage"
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/_316sdp"
             android:layout_height="@dimen/_340sdp"
             android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,11 +43,12 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/detailImageRcycler"
-            android:layout_width="@dimen/_275sdp"
+            android:layout_width="@dimen/_276sdp"
             android:layout_height="@dimen/_54sdp"
             android:layout_marginTop="@dimen/_270sdp"
-            app:layout_constraintEnd_toEndOf="parent"
             android:adapter="@{adapterDetailImage}"
+            android:background="@drawable/details_image_rcyc_background"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,8 +56,8 @@
             android:id="@+id/detailScreenTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="14dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_14sdp"
             android:text="Nusa Pedina"
             android:textSize="@dimen/_22ssp"
             app:layout_constraintStart_toStartOf="parent"

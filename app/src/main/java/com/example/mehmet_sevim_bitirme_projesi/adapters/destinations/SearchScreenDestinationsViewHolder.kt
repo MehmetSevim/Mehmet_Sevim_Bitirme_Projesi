@@ -1,6 +1,5 @@
 package com.example.mehmet_sevim_bitirme_projesi.adapters.destinations
 
-import android.widget.ImageView
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mehmet_sevim_bitirme_projesi.BR
@@ -27,9 +26,7 @@ class SearchScreenDestinationsViewHolder (var travelBinding: ViewDataBinding) :
         fun setImageFromApi(imgSourceUrl: String, imageView: ShapeableImageView) {
             Picasso.get()
                 .load(imgSourceUrl)
-                .resize(100, 100)
-                .centerCrop()
-                .into(imageView);
+                .into(imageView)
         }
 
 
