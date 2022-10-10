@@ -66,4 +66,11 @@ class NetworkModule {
     }
 
 
+    @Provides
+    @Singleton
+    fun provideSearchResultRepository(apiService: ApiService): SearcResulRepository {
+        return SearchResultRepositoryImp(apiService)
+    }
+
+
 }

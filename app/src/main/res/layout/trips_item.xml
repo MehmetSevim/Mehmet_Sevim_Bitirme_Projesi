@@ -1,69 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView4"
-        android:layout_width="@dimen/_289sdp"
-        android:layout_height="@dimen/_162sdp"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/RoundedSquareDestinations"
-        app:srcCompat="@drawable/home_screen_image" />
+    <data>
+        <variable
+            name="roomModel"
+            type="com.example.mehmet_sevim_bitirme_projesi.data.local.RoomEntitiy" />
 
-    <TextView
-        android:id="@+id/tripTitle"
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_57sdp"
-        android:fontFamily="@font/source_sans_pro"
-        android:text="TextView"
-        android:textColor="#FCFCFD"
-        android:textSize="@dimen/_12ssp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tripSubtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="TextView"
-        android:textColor="#80FCFCFD"
-        android:textSize="@dimen/_11ssp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tripTitle" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageView4"
+            android:layout_width="@dimen/_289sdp"
+            android:layout_height="@dimen/_162sdp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/RoundedSquareDestinations"
+            app:srcCompat="@drawable/home_screen_image" />
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_11sdp"
-        android:layout_marginBottom="@dimen/_11sdp"
-        android:drawableLeft="@drawable/bookmark_checked_svg"
-        android:drawablePadding="@dimen/_5sdp"
-        android:text="TextView"
-        android:textColor="#FCFCFD"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/tripTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_57sdp"
+            android:fontFamily="@font/source_sans_pro"
+            android:text="TextView"
+            android:textColor="#FCFCFD"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_11sdp"
-        android:layout_marginBottom="@dimen/_11sdp"
-        android:drawableLeft="@drawable/ic_trip_clock_svg"
-        android:drawablePadding="@dimen/_5sdp"
-        android:text="TextView"
-        android:textColor="#FCFCFD"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tripSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="TextView"
+            android:textColor="#80FCFCFD"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tripTitle" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_11sdp"
+            android:layout_marginBottom="@dimen/_11sdp"
+            android:drawableLeft="@drawable/bookmark_checked_svg"
+            android:drawablePadding="@dimen/_5sdp"
+            android:text="TextView"
+            android:textColor="#FCFCFD"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_11sdp"
+            android:layout_marginBottom="@dimen/_11sdp"
+            android:drawableLeft="@drawable/ic_trip_clock_svg"
+            android:drawablePadding="@dimen/_5sdp"
+            android:text="TextView"
+            android:textColor="#FCFCFD"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -10,6 +10,7 @@
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/bottom_navigation_guide_svg.xml" value="0.1" />
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/bottom_navigation_guide_svg_selected.xml" value="0.1" />
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/bottom_navigation_home.xml" value="0.1" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/bottom_navigation_search_svg.xml" value="0.1" />
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/bottom_navigation_search_svg_selected.xml" value="0.1" />
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/bottom_navigation_selected_background.xml" value="0.218" />
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/bottom_navigation_selected_background_icon.xml" value="0.218" />
@@ -21,6 +22,7 @@
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/guide_icon_change_selector.xml" value="0.218" />
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/home_icon_change_selector.xml" value="0.1" />
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/home_tablayout_selectedcolor.xml" value="0.1" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/ic_loading_screen.xml" value="0.1" />
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/item_backgound_blacked.xml" value="0.1" />
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/nearby_category_background.xml" value="0.1" />
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/drawable/search_border.xml" value="0.1" />
@@ -31,11 +33,13 @@
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/bottom.xml" value="0.3482789855072464" />
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/details_image_item.xml" value="0.3482789855072464" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/fragment_add_task.xml" value="0.125" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.25" />
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/fragment_detail.xml" value="0.2" />
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/fragment_guide.xml" value="0.3482789855072464" />
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/fragment_home.xml" value="0.1" />
-        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/fragment_search.xml" value="0.1826086956521739" />
-        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/fragment_search_result.xml" value="0.3482789855072464" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/fragment_search.xml" value="0.33" />
+        <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/fragment_search_result.xml" value="0.22" />
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/fragment_tab_layout_controller.xml" value="0.17046605876393112" />
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/fragment_trip_and_bookmark.xml" value="0.3482789855072464" />
         <entry key="..\:/Users/mehme/kotlin/Mehmet_Sevim_Bitirme_Projesi/app/src/main/res/layout/home_screen_deals_item.xml" value="0.33" />

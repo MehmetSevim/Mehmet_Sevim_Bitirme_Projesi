@@ -20,9 +20,9 @@ class SearchScreenNearbyViewHolder (var travelBinding: ViewDataBinding) :
         val travelBind = travelBinding as NearbyAttractionItemBinding
         travelBind.apply {
             root.setOnClickListener { onItemClickHandler(homescreenTravelListItem) }
-            bookMarkCheckMageButton.setOnClickListener{
-                if(select == false) bookMarkCheckMageButton.setImageResource(R.drawable.bookmark_checked_svg)
-                else bookMarkCheckMageButton.setImageResource(R.drawable.bookmark_add_icon_svg)
+            bookMarkCheckImageButton.setOnClickListener{
+                if(select == false) bookMarkCheckImageButton.setImageResource(R.drawable.bookmark_checked_svg)
+                else bookMarkCheckImageButton.setImageResource(R.drawable.bookmark_add_icon_svg)
 
                 select = !select
             }
@@ -31,13 +31,12 @@ class SearchScreenNearbyViewHolder (var travelBinding: ViewDataBinding) :
 
         }
     }
-    fun changeIconBookmark () {
 
-    }
 
     fun setImageFromApi(imgSourceUrl: String, imageView: ShapeableImageView) {
         Picasso.get()
             .load(imgSourceUrl)
+            .placeholder(R.drawable.ic_loading_screen)
             .into(imageView)
     }
 

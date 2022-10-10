@@ -5,6 +5,7 @@ import android.widget.ImageView
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mehmet_sevim_bitirme_projesi.BR
+import com.example.mehmet_sevim_bitirme_projesi.R
 import com.example.mehmet_sevim_bitirme_projesi.databinding.HomeScreenDealsItemBinding
 import com.example.mehmet_sevim_bitirme_projesi.domain.model.home.HomeScreenTravelListItem
 import com.squareup.picasso.Picasso
@@ -29,6 +30,7 @@ class HomeScreenTravelListViewHolder
     fun setImageFromApi(imgSourceUrl: String, imageView: ImageView) {
         Picasso.get()
             .load(imgSourceUrl)
+            .placeholder(R.drawable.ic_loading_screen)
             .into(imageView);
     }
 

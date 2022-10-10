@@ -15,16 +15,16 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var activityMainBinding: ActivityMainBinding
-
+    // val getTripsDatabase = RoomDB.getTripsDatabase(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val getTripsDatabase = RoomDB.getTripsDatabase(this)
+         val getTripsDatabase = RoomDB.getTripsDatabase(this)
 
         //val tripModel = RoomEntitiy(1, "hotel","hotel","hotel","hotel","hotel","hotel")
        // getTripsDatabase?.tripDao()?.addTrip(tripModel)
 
         val students: List<RoomEntitiy> =
-            getTripsDatabase?.tripDao()?.getFavourites() as ArrayList<RoomEntitiy>
+            getTripsDatabase?.tripDao()?.getFavourites() as List<RoomEntitiy>
 
         students.forEach {
 
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding.apply {
             val navHostFragment = supportFragmentManager
                 .findFragmentById(fragmentContainerView.id) as NavHostFragment
-            bottomNavigationView3.setItemIconTintList(null);
+            bottomNavigationView3.itemIconTintList = null
             NavigationUI.setupWithNavController(activityMainBinding.bottomNavigationView3,navHostFragment.navController)
         }
 

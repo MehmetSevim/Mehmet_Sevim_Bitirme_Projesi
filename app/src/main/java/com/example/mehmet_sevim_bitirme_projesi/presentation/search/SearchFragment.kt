@@ -46,8 +46,12 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         getAllDestination()
         getAllNearby()
-
-
+        fragmentSearchBinding.apply {
+            textField.setEndIconOnClickListener {
+                val searchString=searchTextTextInput.text.toString()
+                setSearchresult(searchString)
+            }
+        }
 
     }
 
@@ -72,6 +76,11 @@ class SearchFragment : Fragment() {
 
     }
 
+    private fun setSearchresult(searchText:String){
+        val searchAction =
+            SearchFragmentDirections.actionSearchFragmentToSearchResultFragment(searchText = searchText)
+        findNavController().navigate(searchAction)
+    }
 
     private fun setRecyclerAdapterDestination(list:List<HomeScreenTravelListItem>){
         fragmentSearchBinding.apply {

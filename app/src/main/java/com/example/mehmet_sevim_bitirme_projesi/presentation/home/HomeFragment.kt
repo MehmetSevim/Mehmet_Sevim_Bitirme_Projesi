@@ -43,49 +43,53 @@ class HomeFragment : Fragment() {
         allTravelList= listOf()
         homeTravelListModel = ViewModelProvider(this).get(HomeTravelListModel::class.java)
         getAllTravelList()
+
         initListeners()
     }
 
-    private fun getAllTravelList() {
+    private fun getAllTravelList():List<HomeScreenTravelListItem>{
         homeTravelListModel.getAllTravelList().observe(viewLifecycleOwner){
            allTravelList=it
            setRecyclerAdapter(allTravelList)
-
         }
+        return allTravelList
     }
 
-    private fun getAllHotel(){
+    private fun getAllHotel():List<HomeScreenTravelListItem>{
         homeTravelListModel.getAllHotel().observe(viewLifecycleOwner) {
              allTravelList=it
-            setRecyclerAdapter(allTravelList)
-
         }
+        return allTravelList
     }
 
-    private fun getAllFlight(){
+    private fun getAllFlight():List<HomeScreenTravelListItem>{
         homeTravelListModel.getAllFlight().observe(viewLifecycleOwner){
            allTravelList=it
-            setRecyclerAdapter(allTravelList)
         }
+        return allTravelList
 
     }
 
-    private fun getAllTransportation(){
+    private fun getAllTransportation():List<HomeScreenTravelListItem>{
         homeTravelListModel.getAllTransportation().observe(viewLifecycleOwner){
             allTravelList=it
-            setRecyclerAdapter(allTravelList)
-        }
+            }
+        return allTravelList
     }
 
     private fun initListeners() {
-        fragmentHomeBinding.apply {
+        fragmentHomeBinding.apply{
+
             tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
                 override fun onTabSelected(tab: TabLayout.Tab?) {
-                    when(tab?.position){
+                  when(tab?.position){
                         0 -> getAllTravelList()
                         1 -> getAllFlight()
                         2 -> getAllHotel()
                         3 -> getAllTransportation()
+                    }
+                    kotlin.run {
+                        setRecyclerAdapter(allTravelList)
                     }
                 }
 

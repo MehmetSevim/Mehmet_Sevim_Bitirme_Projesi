@@ -19,6 +19,7 @@ import com.example.mehmet_sevim_bitirme_projesi.databinding.FragmentHomeBinding
 import com.example.mehmet_sevim_bitirme_projesi.databinding.FragmentSearchBinding
 import com.example.mehmet_sevim_bitirme_projesi.domain.model.home.HomeScreenTravelListItem
 import com.example.mehmet_sevim_bitirme_projesi.presentation.home.HomeFragmentDirections
+import com.example.mehmet_sevim_bitirme_projesi.presentation.search.SearchFragmentDirections
 import com.example.mehmet_sevim_bitirme_projesi.presentation.search.SearchListModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -42,8 +43,26 @@ class GuideFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        init()
         getAllMight()
         getAllTopPick()
+
+    }
+
+    private fun init() {
+        fragmentGuideBinding.apply {
+            textField2.setEndIconOnClickListener {
+                val searchString = guideSearchtextTextInput.text.toString()
+                setSearchresult(searchString)
+            }
+        }
+    }
+
+
+    private fun setSearchresult(searchText:String){
+        val searchAction =
+            GuideFragmentDirections.actionGuideFragmentToSearchResultFragment(searchText = searchText)
+        findNavController().navigate(searchAction)
     }
 
     private fun getAllMight(){

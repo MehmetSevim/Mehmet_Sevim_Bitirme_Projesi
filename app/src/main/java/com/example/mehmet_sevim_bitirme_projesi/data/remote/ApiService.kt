@@ -17,7 +17,8 @@ interface ApiService {
         @Path(value = "id", encoded = false) id: String,
 
         ) : Call<HomeScreenTravelListItem>
-    @GET("alltravel")
-    fun getSerchResult(): Call<List<HomeScreenTravelListItem>>
+
+    @GET("alltravel?")
+    fun getSearchResult(@Query("search") searchText:String) : Call<List<HomeScreenTravelListItem>>
 
 }

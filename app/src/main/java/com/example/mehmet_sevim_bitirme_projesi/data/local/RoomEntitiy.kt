@@ -29,5 +29,6 @@ data class RoomEntitiy(
     var isBookmark: String,
 
     @ColumnInfo(name = "title")
-    var title: String
+    var title: String,
+
 )

@@ -1,26 +1,27 @@
-package com.example.mehmet_sevim_bitirme_projesi.adapters.detail
+package com.example.mehmet_sevim_bitirme_projesi.adapters.room
 
-import android.widget.ImageView
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mehmet_sevim_bitirme_projesi.BR
 import com.example.mehmet_sevim_bitirme_projesi.R
+import com.example.mehmet_sevim_bitirme_projesi.data.local.RoomEntitiy
 import com.example.mehmet_sevim_bitirme_projesi.databinding.DetailsImageItemBinding
+import com.example.mehmet_sevim_bitirme_projesi.databinding.TripsItemBinding
 import com.example.mehmet_sevim_bitirme_projesi.domain.model.home.Image
 import com.google.android.material.imageview.ShapeableImageView
 import com.squareup.picasso.Picasso
 
-class DetailScreenImageViewHolder   (var travelBinding: ViewDataBinding) :
+class RoomViewHolder  (var travelBinding: ViewDataBinding) :
     RecyclerView.ViewHolder(travelBinding.root) {
     fun onBind(
-        image: Image,
-        onItemClickHandler: (image: Image) -> Unit
+        room: RoomEntitiy,
+        onItemClickHandler: (roomEntitiy: RoomEntitiy) -> Unit
     ) {
-        val travelBind = travelBinding as DetailsImageItemBinding
+        val travelBind = travelBinding as TripsItemBinding
         travelBind.apply {
-            root.setOnClickListener { onItemClickHandler(image) }
-            setVariable(BR.homescreenTravelListItem, image)
-            setImageFromApi(image.url, detailsImageView)
+
+            setVariable(BR.homescreenTravelListItem, room)
+           // setImageFromApi(room.url, imageView4)
 
         }
     }

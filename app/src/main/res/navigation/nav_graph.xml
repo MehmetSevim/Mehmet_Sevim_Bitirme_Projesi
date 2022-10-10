@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_tripAndBookmarkFragment_to_detailActivity"
             app:destination="@id/detailActivity" />
+        <action
+            android:id="@+id/action_tripAndBookmarkFragment_to_detailActivity2"
+            app:destination="@id/detailActivity" />
     </fragment>
     <fragment
         android:id="@+id/guideFragment"
@@ -81,7 +84,14 @@
         android:id="@+id/searchResultFragment"
         android:name="com.example.mehmet_sevim_bitirme_projesi.presentation.searchresult.SearchResultFragment"
         android:label="fragment_search_result"
-        tools:layout="@layout/fragment_search_result" />
+        tools:layout="@layout/fragment_search_result" >
+        <argument
+            android:name="searchText"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_searchResultFragment_to_detailActivity"
+            app:destination="@id/detailActivity" />
+    </fragment>
     <activity
         android:id="@+id/detailActivity"
         android:name="com.example.mehmet_sevim_bitirme_projesi.presentation.detail.DetailActivity"
