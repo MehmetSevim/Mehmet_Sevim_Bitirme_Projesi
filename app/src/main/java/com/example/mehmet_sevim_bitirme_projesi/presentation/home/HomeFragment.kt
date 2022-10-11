@@ -17,8 +17,11 @@ import androidx.lifecycle.get
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.navigation.fragment.findNavController
 import com.example.mehmet_sevim_bitirme_projesi.BR
+import com.example.mehmet_sevim_bitirme_projesi.R
 import com.example.mehmet_sevim_bitirme_projesi.adapters.HomeScreenTravelListAdapter
+import com.example.mehmet_sevim_bitirme_projesi.adapters.category.CategoryAdapter
 import com.example.mehmet_sevim_bitirme_projesi.databinding.FragmentHomeBinding
+import com.example.mehmet_sevim_bitirme_projesi.domain.model.home.HomeScreenCategoryButton
 import com.example.mehmet_sevim_bitirme_projesi.domain.model.home.HomeScreenTravelListItem
 import com.google.android.material.tabs.TabLayout
 import dagger.hilt.android.AndroidEntryPoint
@@ -29,6 +32,7 @@ class HomeFragment : Fragment() {
     private lateinit var homeTravelListModel : HomeTravelListModel
     private lateinit var allTravelList:List<HomeScreenTravelListItem>
     private lateinit var homeScreenTravelListAdapter : HomeScreenTravelListAdapter
+    private lateinit var categoryAdapter: CategoryAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,8 +47,19 @@ class HomeFragment : Fragment() {
         allTravelList= listOf()
         homeTravelListModel = ViewModelProvider(this).get(HomeTravelListModel::class.java)
         getAllTravelList()
-
+        initHomeCategory()
         initListeners()
+    }
+
+    private fun initHomeCategory() {
+      val list = listOf(
+          HomeScreenCategoryButton("Flights",R.drawable.home_plane),
+          HomeScreenCategoryButton("Hotels",R.drawable.home_hotel),
+          HomeScreenCategoryButton("Cars",R.drawable.home_cars),
+          HomeScreenCategoryButton("Taxi",R.drawable.home_taxi)
+      )
+        setCategoryRecyclerAdapter(list)
+        
     }
 
     private fun getAllTravelList():List<HomeScreenTravelListItem>{
@@ -124,6 +139,22 @@ class HomeFragment : Fragment() {
             }
             setVariable(BR.adapter,homeScreenTravelListAdapter)
             homeScreenTravelListAdapter.notifyDataSetChanged()
+        }
+    }
+    private fun setCategoryRecyclerAdapter(list:List<HomeScreenCategoryButton>){
+        fragmentHomeBinding.apply {
+            val layoutManager = GridLayoutManager(
+                activity,
+                1,
+                GridLayoutManager.HORIZONTAL,
+                false
+
+            )
+            categoryRecyclerView.layoutManager = layoutManager
+            categoryAdapter =CategoryAdapter(list){
+
+            }
+            setVariable(BR.adapterCategory,categoryAdapter)
         }
     }
     private fun setDetailScreen(id:String)

@@ -56,6 +56,7 @@ class DetailActivity : AppCompatActivity() {
     fun setImageFromApi(imgSourceUrl: String, imageView: ImageView) {
         Picasso.get()
             .load(imgSourceUrl)
+            .placeholder(R.drawable.loading_icon)
             .into(imageView)
     }
 

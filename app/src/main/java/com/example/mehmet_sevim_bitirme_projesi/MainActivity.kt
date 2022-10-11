@@ -20,8 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
          val getTripsDatabase = RoomDB.getTripsDatabase(this)
 
-        //val tripModel = RoomEntitiy(1, "hotel","hotel","hotel","hotel","hotel","hotel")
-       // getTripsDatabase?.tripDao()?.addTrip(tripModel)
+
 
         val students: List<RoomEntitiy> =
             getTripsDatabase?.tripDao()?.getFavourites() as List<RoomEntitiy>

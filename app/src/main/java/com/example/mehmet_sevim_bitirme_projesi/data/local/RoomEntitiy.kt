@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.mehmet_sevim_bitirme_projesi.domain.model.home.Image
+import javax.annotation.Nullable
 
 
 @Entity(tableName = "roomEntitiy")
@@ -30,5 +31,9 @@ data class RoomEntitiy(
 
     @ColumnInfo(name = "title")
     var title: String,
+
+    @Nullable
+    @ColumnInfo(name = "url")
+    var url: String,
 
 )

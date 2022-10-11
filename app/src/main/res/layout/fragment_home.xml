@@ -8,6 +8,9 @@
         <variable
             name="adapter"
             type="com.example.mehmet_sevim_bitirme_projesi.adapters.HomeScreenTravelListAdapter" />
+        <variable
+            name="adapterCategory"
+            type="com.example.mehmet_sevim_bitirme_projesi.adapters.category.CategoryAdapter" />
 
     </data>
 
@@ -109,6 +112,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
             app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categoryRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:adapter="@{adapterCategory}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

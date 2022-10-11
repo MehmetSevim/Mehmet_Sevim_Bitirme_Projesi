@@ -32,8 +32,8 @@ class TripAndBookmarkFragment : Fragment(){
     private val tripBookMarkList by viewModels<TripBookMarkList>()
     private lateinit var allTravelList:List<HomeScreenTravelListItem>
     private lateinit var fragmentTripAndBookmarkBinding: FragmentTripAndBookmarkBinding
-
-
+    private var getBookmarkDatabase : RoomDB? = null
+    private var getTripsDatabase : RoomDB? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,8 +47,6 @@ class TripAndBookmarkFragment : Fragment(){
         init()
         initListeners()
 
-
-
     }
 
     private fun initListeners() {
@@ -58,6 +56,7 @@ class TripAndBookmarkFragment : Fragment(){
                 override fun onTabSelected(tab: TabLayout.Tab?) {
                     when(tab?.position){
                         0 -> {
+
                             floatingActionButton.isVisible=true
                         }
                         1 -> {
@@ -103,14 +102,22 @@ class TripAndBookmarkFragment : Fragment(){
 
 
     private fun getAllBookMark(){
-        tripBookMarkList.getAllTravel().observe(viewLifecycleOwner){
-            allTravelList=it.filter{ m -> m.isBookmark==true}
-            setRecyclerAdapterBookMark(allTravelList)
-
-        }
+        getBookmarkDatabase = RoomDB.getTripsDatabase(requireActivity())
+        val bookmark: List<RoomEntitiy> =
+            getBookmarkDatabase?.tripDao()?.getFavourites() as List<RoomEntitiy>
+        setRecyclerAdapterBookMark(bookmark)
     }
 
-    private fun setRecyclerAdapterBookMark(list:List<HomeScreenTravelListItem>){
+    private fun getAllTrips(){
+        getTripsDatabase = RoomDB.getTripsDatabase(requireActivity())
+        val bookmark: List<RoomEntitiy> =
+            getTripsDatabase?.tripDao()?.getFavourites() as List<RoomEntitiy>
+        setRecyclerAdapterTrip(bookmark)
+    }
+
+
+
+    private fun setRecyclerAdapterBookMark(list:List<RoomEntitiy>){
         fragmentTripAndBookmarkBinding.apply {
             val layoutManager = GridLayoutManager(
                 activity,
@@ -120,12 +127,10 @@ class TripAndBookmarkFragment : Fragment(){
 
             )
             tripAnBookMarkRecyclerView.layoutManager = layoutManager
-            val searchScreenNearbyAdapter = SearchScreenNearbyAdapter(list){
-                setDetailScreen(it.id)
-
+            val roomAdapter = RoomAdapter(list){
+                setDetailScreen(it.id.toString())
             }
-            tripAnBookMarkRecyclerView.adapter=searchScreenNearbyAdapter
-            searchScreenNearbyAdapter.notifyDataSetChanged()
+            tripAnBookMarkRecyclerView.adapter=roomAdapter
 
         }
     }
@@ -142,7 +147,6 @@ class TripAndBookmarkFragment : Fragment(){
             tripAnBookMarkRecyclerView.layoutManager = layoutManager
             val roomAdapter = RoomAdapter(list){
 
-
             }
             tripAnBookMarkRecyclerView.adapter=roomAdapter
 
@@ -154,6 +158,9 @@ class TripAndBookmarkFragment : Fragment(){
         val action =
             TripAndBookmarkFragmentDirections.actionTripAndBookmarkFragmentToDetailActivity(id = id)
         findNavController().navigate(action)
+
+    }
+    private fun getRoomBookmark(){
 
     }
 

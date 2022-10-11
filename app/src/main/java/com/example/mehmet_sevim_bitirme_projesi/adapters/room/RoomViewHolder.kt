@@ -4,8 +4,11 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mehmet_sevim_bitirme_projesi.BR
 import com.example.mehmet_sevim_bitirme_projesi.R
+import com.example.mehmet_sevim_bitirme_projesi.data.local.RoomDB
 import com.example.mehmet_sevim_bitirme_projesi.data.local.RoomEntitiy
+import com.example.mehmet_sevim_bitirme_projesi.databinding.BookmarkItemBinding
 import com.example.mehmet_sevim_bitirme_projesi.databinding.DetailsImageItemBinding
+import com.example.mehmet_sevim_bitirme_projesi.databinding.NearbyAttractionItemBinding
 import com.example.mehmet_sevim_bitirme_projesi.databinding.TripsItemBinding
 import com.example.mehmet_sevim_bitirme_projesi.domain.model.home.Image
 import com.google.android.material.imageview.ShapeableImageView
@@ -17,11 +20,29 @@ class RoomViewHolder  (var travelBinding: ViewDataBinding) :
         room: RoomEntitiy,
         onItemClickHandler: (roomEntitiy: RoomEntitiy) -> Unit
     ) {
-        val travelBind = travelBinding as TripsItemBinding
-        travelBind.apply {
+        val travelBind = travelBinding as BookmarkItemBinding
 
-            setVariable(BR.homescreenTravelListItem, room)
-           // setImageFromApi(room.url, imageView4)
+        travelBind.apply {
+            val getTripsDatabase = RoomDB.getTripsDatabase(root.context)
+            root.setOnClickListener { onItemClickHandler(room) }
+            setVariable(BR.adapterBookmark, room)
+            setImageFromApi(room.url, seachScreenNearbyImageView)
+            bookMarkCheckImageButton.setOnClickListener {
+                room.apply {
+                    bookMarkCheckImageButton.setImageResource(R.drawable.bookmark_add_icon_svg)
+                    val tripModel = RoomEntitiy(
+                        id = id.toInt(),
+                        city = city,
+                        country = country,
+                        category = category,
+                        description = description,
+                        isBookmark = isBookmark.toString(),
+                        title = title,
+                        url = url
+                    )
+                    getTripsDatabase?.tripDao()?.deleteTrip(tripModel)
+                }
+            }
 
         }
     }

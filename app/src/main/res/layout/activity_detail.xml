@@ -33,13 +33,13 @@
             android:id="@+id/DetailScreenPlanetsImage"
             android:layout_width="@dimen/_316sdp"
             android:layout_height="@dimen/_340sdp"
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/ImageView.Corner"
-            app:srcCompat="@drawable/ic_launcher_background" />
+            app:srcCompat="@drawable/loading_icon" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/detailImageRcycler"

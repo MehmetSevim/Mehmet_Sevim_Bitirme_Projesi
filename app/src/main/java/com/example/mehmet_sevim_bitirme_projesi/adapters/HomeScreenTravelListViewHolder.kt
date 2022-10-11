@@ -30,7 +30,7 @@ class HomeScreenTravelListViewHolder
     fun setImageFromApi(imgSourceUrl: String, imageView: ImageView) {
         Picasso.get()
             .load(imgSourceUrl)
-            .placeholder(R.drawable.ic_loading_screen)
+            .placeholder(R.drawable.loading_icon)
             .into(imageView);
     }
 

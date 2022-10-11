@@ -18,7 +18,7 @@
             android:layout_height="@dimen/_39sdp"
             android:layout_marginStart="@dimen/_25sdp"
             android:layout_marginTop="@dimen/_7sdp"
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/RoundedSquareForDetails"

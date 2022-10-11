@@ -27,8 +27,7 @@ class SearchScreenDestinationsViewHolder (var travelBinding: ViewDataBinding) :
         fun setImageFromApi(imgSourceUrl: String, imageView: ShapeableImageView) {
             Picasso.get()
                 .load(imgSourceUrl)
-                .placeholder(R.drawable.ic_loading_screen)
-
+                .placeholder(R.drawable.loading_icon)
                 .into(imageView)
         }
 

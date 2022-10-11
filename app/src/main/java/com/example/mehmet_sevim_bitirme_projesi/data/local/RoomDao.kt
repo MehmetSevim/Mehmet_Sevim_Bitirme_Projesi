@@ -13,4 +13,7 @@ interface RoomDao {
     @Insert
     fun addTrip(tripModel : RoomEntitiy?)
 
+    @Delete
+    fun deleteTrip(tripModel: RoomEntitiy?)
+
 }
