@@ -12,11 +12,13 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.mehmet_sevim_bitirme_projesi.BR
 import com.example.mehmet_sevim_bitirme_projesi.R
 import com.example.mehmet_sevim_bitirme_projesi.adapters.HomeScreenTravelListAdapter
+import com.example.mehmet_sevim_bitirme_projesi.adapters.guide.GuideAdapter
 import com.example.mehmet_sevim_bitirme_projesi.adapters.might.GuideScreenMightAdapter
 import com.example.mehmet_sevim_bitirme_projesi.adapters.topPick.GuideScreenTopPicAdapter
 import com.example.mehmet_sevim_bitirme_projesi.databinding.FragmentGuideBinding
 import com.example.mehmet_sevim_bitirme_projesi.databinding.FragmentHomeBinding
 import com.example.mehmet_sevim_bitirme_projesi.databinding.FragmentSearchBinding
+import com.example.mehmet_sevim_bitirme_projesi.domain.model.guide.GuideIcon
 import com.example.mehmet_sevim_bitirme_projesi.domain.model.home.HomeScreenTravelListItem
 import com.example.mehmet_sevim_bitirme_projesi.presentation.home.HomeFragmentDirections
 import com.example.mehmet_sevim_bitirme_projesi.presentation.search.SearchFragmentDirections
@@ -30,6 +32,7 @@ class GuideFragment : Fragment() {
     private val guideListModel by viewModels<GuideListModel>()
     private lateinit var guideScreenMightAdapter: GuideScreenMightAdapter
     private lateinit var guideScreenTopPicAdapter: GuideScreenTopPicAdapter
+    private lateinit var guideCategoryAdapter: GuideAdapter
     private lateinit var allTravelList:List<HomeScreenTravelListItem>
 
 
@@ -46,6 +49,7 @@ class GuideFragment : Fragment() {
         init()
         getAllMight()
         getAllTopPick()
+        getAllCategories()
 
     }
 
@@ -82,6 +86,13 @@ class GuideFragment : Fragment() {
 
     }
 
+    private fun getAllCategories(){
+        guideListModel.getAllCategories().observe(viewLifecycleOwner){
+            setCategoryrecyler(it)
+        }
+
+    }
+
     private fun setMightRecyclerAdapter(list:List<HomeScreenTravelListItem>){
         fragmentGuideBinding.apply {
             val layoutManager = GridLayoutManager(
@@ -112,6 +123,23 @@ class GuideFragment : Fragment() {
                 setDetailScreen(it.id)
             }
             setVariable(BR.adaptertoppic,guideScreenTopPicAdapter)
+
+        }
+    }
+
+    private fun setCategoryrecyler(list:List<GuideIcon>){
+        fragmentGuideBinding.apply {
+            val layoutManager = GridLayoutManager(
+                activity,
+                1,
+                GridLayoutManager.HORIZONTAL,
+                false
+
+            )
+            recyclerView3.layoutManager = layoutManager
+            guideCategoryAdapter = GuideAdapter(list){
+            }
+            setVariable(BR.adaptercategories,guideCategoryAdapter)
 
         }
     }

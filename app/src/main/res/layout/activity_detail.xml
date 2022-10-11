@@ -19,7 +19,7 @@
             android:id="@+id/detailScreenItemLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_11sdp"
+            android:layout_marginStart="@dimen/_19sdp"
             android:layout_marginTop="@dimen/_3sdp"
             android:drawableLeft="@drawable/ic_details_pin_svg"
             android:drawablePadding="@dimen/_5sdp"
@@ -65,8 +65,8 @@
 
         <TextView
             android:id="@+id/detailScreenDescription"
-            android:layout_width="382dp"
-            android:layout_height="225dp"
+            android:layout_width="@dimen/_270sdp"
+            android:layout_height="@dimen/_130sdp"
             android:layout_marginTop="@dimen/_16sdp"
             android:overScrollMode="ifContentScrolls"
             android:scrollbars="vertical"
@@ -74,6 +74,19 @@
             android:text="TextView"
             app:layout_constraintStart_toStartOf="@+id/detailScreenItemLocation"
             app:layout_constraintTop_toBottomOf="@+id/detailScreenItemLocation" />
+
+        <Button
+            android:id="@+id/addBookMark"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_44sdp"
+            android:backgroundTint="#FF4760"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Add Book Mark"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailScreenDescription" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

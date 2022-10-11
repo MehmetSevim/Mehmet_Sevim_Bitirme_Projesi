@@ -12,6 +12,10 @@
             name="adaptertoppic"
             type="com.example.mehmet_sevim_bitirme_projesi.adapters.topPick.GuideScreenTopPicAdapter" />
 
+        <variable
+            name="adaptercategories"
+            type="com.example.mehmet_sevim_bitirme_projesi.adapters.guide.GuideAdapter" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -109,6 +113,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_31sdp"
             android:layout_marginTop="@dimen/_11sdp"
+            android:adapter="@{adaptercategories}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"

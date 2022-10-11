@@ -1,5 +1,6 @@
 package com.example.mehmet_sevim_bitirme_projesi.data.remote
 
+import com.example.mehmet_sevim_bitirme_projesi.domain.model.guide.GuideIcon
 import com.example.mehmet_sevim_bitirme_projesi.domain.model.home.HomeScreenTravelListItem
 import retrofit2.Call
 import retrofit2.http.GET
@@ -20,5 +21,8 @@ interface ApiService {
 
     @GET("alltravel?")
     fun getSearchResult(@Query("search") searchText:String) : Call<List<HomeScreenTravelListItem>>
+
+    @GET("GuideCategories")
+    fun getAllCategories():Call<List<GuideIcon>>
 
 }

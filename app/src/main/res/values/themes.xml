@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Mehmet_Sevim_Bitirme_Projesi" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">#FF4760</item>
+        <item name="colorPrimaryVariant">#FF4760</item>
         <item name="colorOnPrimary">#E5E5E5</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

@@ -7,7 +7,7 @@ import androidx.room.Query
 
 @Dao
 interface RoomDao {
-    @Query("SELECT * FROM roomEntitiy ORDER BY id DESC")
+    @Query("SELECT * FROM roomEntitiy ORDER BY id DESC  ")
     fun getFavourites() : List<RoomEntitiy>
 
     @Insert
