@@ -105,6 +105,8 @@ class HomeFragment : Fragment() {
                     }
                     kotlin.run {
                         setRecyclerAdapter(allTravelList)
+
+
                     }
                 }
 
@@ -152,7 +154,7 @@ class HomeFragment : Fragment() {
             )
             categoryRecyclerView.layoutManager = layoutManager
             categoryAdapter =CategoryAdapter(list){
-
+                Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show()
             }
             setVariable(BR.adapterCategory,categoryAdapter)
         }
